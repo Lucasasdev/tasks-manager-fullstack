@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --blue: #0099ff;
+  --white: #fff;
+  --gray: #ddd;
+  --white-gray: #f2f2f2;
+  --light-gray: #ebebeb;
+  --dark-gray: #333;
+  --orange: orange;
+}
+
+/* general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  background: var(--blue);
+}
+
+#main-container {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form */
+#add-form {
+  display: flex;
+  width: 100%;
+  padding-bottom: 40px;
+  gap: 10px;
+}
+
+.add-input {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  outline-color: var(--ligth-gray);
+  font-weight: bold;
+  color: var(--dark-gray);
+}
+
+.add-input:focus {
+  outline-color: var(--gray);
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/*table */
+#table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th,
+.td {
+  padding: 10px 15px;
+  border: 1px solid var(--gray);
+  text-align: center;
+}
+
+.td {
+  color: var(--dark-gray);
+  font-weight: 600;
+}
+
+.table-row:nth-child(even) {
+  background: var(--white-gray);
+}
+
+#select-status {
+  width: 80%;
+  padding: 15px;
+  background: var(--light-gray);
+  color: var(--dark-gray);
+  border: none;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: bold;
+  outline-color: var(--gray);
+}
+
+#select-status:hover {
+  background: var(--gray);
+  cursor: pointer;
+}
+
+.btn-action {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.btn-action:nth-child(1) {
+  background: var(--orange);
+  margin-right: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action:nth-child(2) {
+  background: rgba(237, 42, 42, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
