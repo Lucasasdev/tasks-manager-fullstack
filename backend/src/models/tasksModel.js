@@ -1,12 +1,10 @@
 const connection = require("./connections");
 
-//get all datas of the database
 const getAll = async () => {
   const [tasks] = await connection.execute("SELECT * FROM tasks;");
   return tasks;
 };
 
-//create a new task
 const createTask = async (task) => {
   const { title } = task;
   const now = Date.now();
@@ -18,7 +16,7 @@ const createTask = async (task) => {
   const query =
     "INSERT INTO tasks (title, status, created_at) VALUES (?, ?, ?)";
 
-  //the bind parameters must not be function(s).
+  // The bind parameters must not be functions
   const [createdTask] = await connection.execute(query, [
     title,
     "pendente",
@@ -28,7 +26,6 @@ const createTask = async (task) => {
   return { insertId: createdTask.insertId };
 };
 
-//delete some content by id
 const deleteTask = async (id) => {
   const deletedTask = await connection.execute(
     "DELETE FROM tasks WHERE id = ?",
@@ -37,8 +34,7 @@ const deleteTask = async (id) => {
   return deletedTask;
 };
 
-//update task by id
-const updateTak = async (id, task) => {
+const updateTask = async (id, task) => {
   const query = "UPDATE tasks SET title = ?, status = ? WHERE id = ?";
   const { title, status } = task;
 
@@ -50,5 +46,5 @@ module.exports = {
   getAll,
   createTask,
   deleteTask,
-  updateTak,
+  updateTask,
 };
